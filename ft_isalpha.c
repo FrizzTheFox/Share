@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:45:59 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/20 15:46:46 by jahmimid         ###   ########.fr       */
+/*   Created: 2021/05/20 15:48:37 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/05/20 15:56:15 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+int	ft_isalpha(int c)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (n == 0)
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
 		return (0);
-	while (s1[i] == s2[i] && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
 }
