@@ -10,16 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
+
 void	*ft_memset(void *b, int c, size_t len)
 {
+	int i;
 	char *str;
 
+	i = 0;
 	str = b;
 	while (len > 0)
 	{
-		str = c;
-		str++;
+		str[i] = c;
+		i++;
 		len--;
 	}
-	return (b);
+	return 0;
+}
+
+int main(void)
+{
+	char str[] = "BonjourBonsoir";
+	printf("Before: %s \n", str);
+	memset(str, '*', 3);
+	printf("After memset: %s \n", str);
+	ft_memset(str, '*', 5);
+	printf("After ft_memset: %s \n", str);
+	return (0);
 }
