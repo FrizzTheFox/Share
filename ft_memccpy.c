@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 16:39:17 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/24 11:13:22 by jahmimid         ###   ########.fr       */
+/*   Created: 2021/05/24 14:46:08 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/05/24 16:02:59 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	int i;
-	char *str;
+	size_t i;
+	char *srccpy;
+	char *dstcpy;
 
 	i = 0;
-	str = b;
-	while (len > 0)
+	dstcpy = (char *)dst;
+  	srccpy = (char *)src;
+	while (srccpy[i] && i < n)
 	{
-		str[i] = c;
+		if(srccpy[i] == c)
+			return 0;
+		dstcpy[i] = srccpy[i];
 		i++;
-		len--;
 	}
 	return 0;
 }
 
-int main(void)
+int	main(void)
 {
-	char str[] = "BonjourBonsoir";
-	printf("Before: %s \n", str);
-	memset(str, '*', 5);
-	printf("After memset: %s \n", str);
-	ft_memset(str, '*', 5);
-	printf("After ft_memset: %s \n", str);
-	return (0);
+	char src[] = "BonjourTheWorld";
+	char dst[50] = "";
+
+	printf("Before ft_memccpy: %s \n", dst);
+	ft_memccpy(dst, src, 'W', 50);
+	printf("After ft_memccpy: %s \n", dst);
+	return 0;
 }

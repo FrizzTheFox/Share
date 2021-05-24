@@ -6,11 +6,11 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:45:59 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/20 15:46:46 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:44:47 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 

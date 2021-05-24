@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 16:39:17 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/24 11:13:22 by jahmimid         ###   ########.fr       */
+/*   Created: 2021/05/24 16:03:10 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/05/24 16:41:45 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+/*char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	char *str;
+	
+}*/
 
-	i = 0;
-	str = b;
-	while (len > 0)
-	{
-		str[i] = c;
-		i++;
-		len--;
-	}
+int	main(void)
+{
+	char str[] = "Bonjour";
+	printf("strchr: %s \n", strchr(str, 'j'));
 	return 0;
-}
-
-int main(void)
-{
-	char str[] = "BonjourBonsoir";
-	printf("Before: %s \n", str);
-	memset(str, '*', 5);
-	printf("After memset: %s \n", str);
-	ft_memset(str, '*', 5);
-	printf("After ft_memset: %s \n", str);
-	return (0);
 }

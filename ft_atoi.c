@@ -6,11 +6,11 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:31:03 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/20 12:46:36 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:40:20 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;

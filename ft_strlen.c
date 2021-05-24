@@ -6,11 +6,11 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:24:16 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/20 12:46:46 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:44:02 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
