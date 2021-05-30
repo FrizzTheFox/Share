@@ -38,7 +38,7 @@ int	main(void)
 	char dst[50] = "";
 
 	printf("Before ft_memccpy: %s \n", dst);
-	ft_memccpy(dst, src, 'W', 50);
+	ft_memccpy(dst, src, 'l', 50);
 	printf("After ft_memccpy: %s \n", dst);
 	return 0;
 }

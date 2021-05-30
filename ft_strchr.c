@@ -13,14 +13,25 @@
 #include <stdio.h>
 #include <string.h>
 
-/*char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	
-}*/
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return (s);
+		s++;
+	}
+	s++;
+	if (*s == c)
+		return (s);
+	else
+		return (NULL);
+}
 
 int	main(void)
 {
 	char str[] = "Bonjour";
-	printf("strchr: %s \n", strchr(str, 'j'));
+	printf("strchr: %s \n", strchr(str, 'B'));
+	printf("ft_strchr: %s \n", ft_strchr(str, 'B'));
 	return 0;
 }
