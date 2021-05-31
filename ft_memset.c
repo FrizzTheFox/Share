@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:39:17 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/24 11:13:22 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/05/31 16:32:21 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = b;
@@ -26,16 +26,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 		len--;
 	}
-	return 0;
-}
-
-int main(void)
-{
-	char str[] = "BonjourBonsoir";
-	printf("Before: %s \n", str);
-	memset(str, '*', 5);
-	printf("After memset: %s \n", str);
-	ft_memset(str, '*', 5);
-	printf("After ft_memset: %s \n", str);
-	return (0);
+	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:13:32 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/24 11:27:29 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/05/31 16:12:20 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = s;
@@ -26,15 +26,4 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 		n--;
 	}
-}
-
-int	main(void)
-{
-	char s[] = "Bonjour";
-	printf("Before: %s, \n", s);
-	bzero(s, 8);
-	printf("After bzero: %s, \n", s);
-	ft_bzero(s, 5);
-	printf("After ft_bzero: %s, \n", s);
-	return 0;
 }

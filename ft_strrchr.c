@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/31 11:45:22 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/05/31 16:50:55 by jahmimid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strrchr(char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*s != '\0')
@@ -16,17 +28,9 @@ char	*ft_strrchr(char *s, int c)
 	while (s && i > 0)
 	{
 		if (*s == c)
-			return (s);
+			return ((char *)s);
 		s--;
 		i--;
 	}
 	return (NULL);
-}
-
-int	main(void)
-{
-	char str[] = "BonjourJeM'appelleJawad";
-	printf("strrchr: %s \n", strrchr(str, 'J'));
-	printf("ft_strrchr: %s \n", ft_strrchr(str, 'J'));
-	return 0;
 }
