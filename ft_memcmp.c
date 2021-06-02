@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:44:56 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/31 16:13:35 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:20:57 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*s1cpy;
-	char	*s2cpy;
+	size_t			i;
+	unsigned char	*s1cpy;
+	unsigned char	*s2cpy;
 
 	i = 0;
-	s1cpy = (char *)s1;
-	s2cpy = (char *)s2;
+	if (s1 == s2 || n == 0)
+		return (0);
+	s1cpy = (unsigned char *)s1;
+	s2cpy = (unsigned char *)s2;
 	while (s1cpy[i] == s2cpy[i] && i < n - 1)
 		i++;
 	return (s1cpy[i] - s2cpy[i]);

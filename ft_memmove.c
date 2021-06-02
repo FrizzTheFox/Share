@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:34:58 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/31 16:13:11 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:55:55 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,22 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	char	*srccpy;
 
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	destcpy = (char *)dest;
 	srccpy = (char *)src;
-	while (srccpy[i] != '\0' && i < len)
+	if (dest > src)
 	{
-		destcpy[i] = srccpy[i];
-		i++;
+		while (len-- > 0)
+			destcpy[len] = srccpy[len];
+	}
+	else
+	{
+		while (i < len)
+		{
+			destcpy[i] = srccpy[i];
+			i++;
+		}
 	}
 	return (destcpy);
 }

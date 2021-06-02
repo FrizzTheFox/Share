@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 16:03:10 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/02 12:13:18 by jahmimid         ###   ########.fr       */
+/*   Created: 2021/06/02 15:48:24 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/06/02 17:01:44 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-char	*ft_strchr(const char *s, int c)
+char *ft_strdup(const char *s1)
 {
-	char	*str;
+	int i;
+	int len;
+	char *str;
 
-	str = (char *)s;
-	while (*str != c)
+	len = ft_strlen(s1);
+	str = (char *)malloc(size_of(len + 1));
+	if (str = NULL)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
+		str[i] = s1[i];
+		i++;
 	}
 	return (str);
 }
