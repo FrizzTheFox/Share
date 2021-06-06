@@ -34,3 +34,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+
+int	main(void)
+{
+	char search[] = "concatenate";
+	char find[] = "cat";
+	printf("strnstr: %s \n", strnstr(search, find, 5));
+	printf("ft_strnstr: %s \n", ft_strnstr(search, find, 5));
+	return 0;
+}
