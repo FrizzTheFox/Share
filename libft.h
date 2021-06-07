@@ -26,5 +26,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_strdup(const char *s1);
+void	*ft_calloc(size_t count, size_t size);
+size_t	ft_strlcpy(char *restrict dest, const char *restrict src,
+			size_t destsize);
+size_t	ft_strlcat(char *restrict dest, const char *restrict src,
+			size_t destsize);
 
 #endif

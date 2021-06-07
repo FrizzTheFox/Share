@@ -6,11 +6,13 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:24:16 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/05/24 11:44:02 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:56:56 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+#include "libft.h"
+
+int	ft_strlen(const char *str)
 {
 	int	i;
 

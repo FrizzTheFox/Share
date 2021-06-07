@@ -6,12 +6,11 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:46:08 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/02 15:41:04 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:01:04 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	   	int c, size_t n)

@@ -6,7 +6,7 @@
 #    By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/02 16:09:25 by jahmimid          #+#    #+#              #
-#    Updated: 2021/06/02 16:22:34 by jahmimid         ###   ########.fr        #
+#    Updated: 2021/06/07 11:50:42 by jahmimid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ RM	= rm -f
 .c.o:
 		gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
-all:
-	${NAME}
+all:	${NAME}
 
 ${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}

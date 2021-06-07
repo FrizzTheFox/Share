@@ -6,21 +6,24 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 15:48:24 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/02 17:01:44 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:03:45 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strdup(const char *s1)
-{
-	int i;
-	int len;
-	char *str;
+#include "libft.h"
 
+char	*ft_strdup(const char *s1)
+{
+	int		i;
+	int		len;
+	char	*str;
+
+	i = 0;
 	len = ft_strlen(s1);
-	str = (char *)malloc(size_of(len + 1));
-	if (str = NULL)
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (i <= len)
 	{
 		str[i] = s1[i];
 		i++;
