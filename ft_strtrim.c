@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:56:51 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/08 16:49:05 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/09 13:29:40 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,16 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*res;
-	int		len;
-	int		debut;
-	int		fin;
-	int		s;
+	char	*str;
 	int		i;
 
-	debut = 0;
-	s = 0;
-	i = 0;
-	fin = ft_strlen(s1);
-	len = ft_strlen(s1);
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if (res == NULL)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (set[s] != '\0')
-	{
-		if (s1[debut] == set[s])
-		{
-			debut++;
-			s = 0;
-		}
-		s++;
-	}
-	while (set[s] != '\0')
-	{
-		if (s1[fin] == set[s])
-		{
-			fin--;
-			s = 0;
-		}
-		s++;
-	}
-	while (debut < fin)
-	{
-		res[i] = s1[debut];
-		i++;
-		debut++;
-	}
-	return (res);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i > 0 && ft_strchr(set, s1[i]))
+		i--;
+	str = ft_substr(s1, 0, i + 1);
+	return (str);
 }
