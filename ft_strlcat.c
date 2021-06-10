@@ -6,13 +6,13 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 15:48:45 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/07 16:11:20 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/10 13:14:22 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dest, const char *restrict src,
+size_t	ft_strlcat(char *dest, const char *src,
 		size_t destsize)
 {
 	size_t	i;

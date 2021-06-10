@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:45:22 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/07 14:59:52 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:50:12 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*str;
-	int		i;
+	int				i;
 
 	str = (char *)s;
 	i = 0;
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i > 0)
 	{
 		i--;
-		if (str[i] == c)
+		if (str[i] == (unsigned char)c)
 			return (&str[i]);
 	}
 	return (NULL);

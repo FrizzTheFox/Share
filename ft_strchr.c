@@ -6,7 +6,7 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 16:03:10 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/07 14:56:15 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:49:39 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	while (*str != c)
+	while (*str != (unsigned char)c)
 	{
 		if (*str == '\0')
 			return (NULL);
