@@ -57,19 +57,19 @@ static void	ft_strcpy(char *src, char *dst, int len)
 	dst[i] = '\0';
 }
 
-/*static void	**ft_free(char **str)
+static void	**ft_free(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*str[i] != '\0')
 	{
 		free(str[i]);
 		i++;
 	}
 	free(str[i]);
 	return (NULL);
-}*/
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 			str[j] = malloc(sizeof(char) * (ft_word_lenght((char *)s, c) + 1));
 			if (str[j] == NULL)
 			{
-//				ft_free(str);
+				ft_free(str);
 				return (NULL);
 			}
 			ft_strcpy((char *)s, str[j], ft_word_lenght((char *)s, c));
