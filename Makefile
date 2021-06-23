@@ -18,6 +18,8 @@ NAME	= libft.a
 
 RM	= rm -f
 
+CC	= gcc
+
 .c.o:
 		gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
@@ -33,5 +35,9 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re

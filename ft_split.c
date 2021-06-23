@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,18 +15,18 @@
 
 static int	ft_word_count(char *s, char c)
 {
-	int i;
+//	int i;
 	int count;
 
-	i = 0;
+//	i = 0;
 	count = 0;
-	if (s == NULL || s == '\0')
+	if (s == NULL || *s == '\0')
 		return (0);
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if (*s && *(s + 1) != c)
 			count++;
-		i++;
+		s++;
 	}
 	count++;
 	return (count);
@@ -37,7 +37,7 @@ static int	ft_word_lenght(char *s, char c)
 	int	i;
 
 	i = 0;
-	if (s == NULL || s == '\0')
+	if (s == NULL || *s == '\0')
 		return (0);
 	while (s[i] != '\0' && s[i] != c)
 		i++;
@@ -103,17 +103,17 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int i;
 
 	i = 0;
-	char **str = ft_split("      split       this for   me  !      ", ' ' );
-	while (i < 5)
+	char **str = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Sus pendisse", ' ' );
+	while (i < 13)
 	{
-		printf("ft_split %s\n", str[i]);
+		printf("%s\n", str[i]);
 		i++;
 	}
 
 	return 0;
-}
+}*/
