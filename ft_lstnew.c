@@ -5,7 +5,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 
 	new = malloc(sizeof(*new));
-	if	(new == NULL)
+	if (new == NULL)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
