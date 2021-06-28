@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile2                                          :+:      :+:    :+:    #
+#    Makefile                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -27,13 +27,19 @@ RM	= rm -f
 
 CC	= gcc
 
+CFLAGS	= -Wall -Werror -Wextra
+
 .c.o:
-		gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
+	gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
 all:	${NAME}
 
 ${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}
+
+so:	
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:
 	${RM} ${OBJS}
