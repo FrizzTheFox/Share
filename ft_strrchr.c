@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*str;
-	int				i;
+	int		i;
 
 	str = (char *)s;
 	i = 0;
