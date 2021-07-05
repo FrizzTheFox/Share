@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_word_count(char *s, char c)
+static int	ft_word_count(char const *s, char c)
 {
 	int wcount;
 
@@ -70,7 +70,7 @@ static char	**treat(char const *s, char **dst, char c, int slen)
 			a++;
 		dst[b] = (char *)malloc(sizeof(char) * (ft_word_lenght(s, c, a) + 1));
 		if (dst[b] == NULL)
-			return (ft_free(dst, b));
+			return ((char **)ft_free(dst, b));
 		while (s[a] && s[a] != c)
 		{
 			dst[b][d] = s[a];
