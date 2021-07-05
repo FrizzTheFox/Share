@@ -6,114 +6,95 @@
 /*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 12:12:53 by jahmimid          #+#    #+#             */
-/*   Updated: 2021/06/14 16:28:52 by jahmimid         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:20:01 by jahmimid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_word_count(char *s, char c)
 {
-//	int i;
-	int count;
+	int wcount;
 
-//	i = 0;
-	count = 0;
+	wcount = 0;
 	if (s == NULL || *s == '\0')
 		return (0);
 	while (*s)
 	{
 		if (*s && *(s + 1) != c)
-			count++;
+			wcount++;
 		s++;
 	}
-	count++;
-	return (count);
+	wcount++;
+	return (wcount);
 }
 
-static int	ft_word_lenght(char *s, char c)
+static int	ft_word_lenght(char *s, char c, int i)
 {
-	int	i;
+	int	wlen;
 
-	i = 0;
+	wlen = 0;
 	if (s == NULL || *s == '\0')
 		return (0);
 	while (s[i] != '\0' && s[i] != c)
-		i++;
-	return (i);
-}
-
-static void	ft_strcpy(char *src, char *dst, int len)
-{
-	int i;
-
-	i = 0;
-	while (src[i] != '\0' && i < len)
 	{
-		dst[i] = src[i];
+		wlen++;
 		i++;
 	}
-	dst[i] = '\0';
+	return (wlen);
 }
 
-static void	**ft_free(char **str)
+static char	**treat(char const *s, char **dst, char c, int slen)
 {
-	int	i;
+	int	a;
+	int	b;
+	int	c;
 
-	i = 0;
-	while (*str[i] != '\0')
+	a = 0;
+	b = 0;
+	while (s[a] && b < slen)
+	{
+		k = 0;
+		while (s[a] == c)
+			a++;
+		dst[b] = (char *)malloc(sizeof(char) * (ft_word_lenght(s, c, i) + 1));
+		if (dst[b] == NULL)
+			return (ft_free(dst));
+		while (s[a] && s[a] != c)
+		{
+			dst[b][c] = s[a];
+			c++;
+			a++;
+		}
+		dst[b][c] = '\0';
+		b++;
+	}
+	dst[b] = '\0';
+	return (dst);
+}
+
+static void	**ft_free(char **str, int i)
+{
+	while (str[i] && i > 0)
 	{
 		free(str[i]);
-		i++;
+		i--;
 	}
-	free(str[i]);
+	free(str);
 	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	j;
+	int	slen;
 	char **str;
 
-	j = 0;
+	slen = ft_count_word(s, c);
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (ft_word_count((char *)s, c) + 1));
+	str = malloc(sizeof(char *) * (slen + 1));
 	if (str == NULL)
 		return (NULL);
-	str[ft_word_count((char *)s, c) + 1] = NULL;
-	while (*s != '\0')
-	{
-		if (*s == c)
-			s++;
-		else
-		{
-			str[j] = malloc(sizeof(char) * (ft_word_lenght((char *)s, c) + 1));
-			if (str[j] == NULL)
-			{
-				ft_free(str);
-				return (NULL);
-			}
-			ft_strcpy((char *)s, str[j], ft_word_lenght((char *)s, c));
-			j++;
-			s = s + ft_word_lenght((char *)s, c);
-		}
-	}
+	str[slen + 1] = NULL;
 	return (str);
 }
-
-/*int	main(void)
-{
-	int i;
-
-	i = 0;
-	char **str = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Sus pendisse", ' ' );
-	while (i < 13)
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
-
-	return 0;
-}*/
