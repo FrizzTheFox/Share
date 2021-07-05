@@ -44,35 +44,6 @@ static int	ft_word_lenght(char *s, char c, int i)
 	return (wlen);
 }
 
-static char	**treat(char const *s, char **dst, char c, int slen)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = 0;
-	b = 0;
-	while (s[a] && b < slen)
-	{
-		k = 0;
-		while (s[a] == c)
-			a++;
-		dst[b] = (char *)malloc(sizeof(char) * (ft_word_lenght(s, c, i) + 1));
-		if (dst[b] == NULL)
-			return (ft_free(dst));
-		while (s[a] && s[a] != c)
-		{
-			dst[b][c] = s[a];
-			c++;
-			a++;
-		}
-		dst[b][c] = '\0';
-		b++;
-	}
-	dst[b] = '\0';
-	return (dst);
-}
-
 static void	**ft_free(char **str, int i)
 {
 	while (str[i] && i > 0)
@@ -82,6 +53,35 @@ static void	**ft_free(char **str, int i)
 	}
 	free(str);
 	return (NULL);
+}
+
+static char	**treat(char const *s, char **dst, char c, int slen)
+{
+	int	a;
+	int	b;
+	int	d;
+
+	a = 0;
+	b = 0;
+	while (s[a] && b < slen)
+	{
+		d = 0;
+		while (s[a] == c)
+			a++;
+		dst[b] = (char *)malloc(sizeof(char) * (ft_word_lenght(s, c, a) + 1));
+		if (dst[b] == NULL)
+			return (ft_free(dst));
+		while (s[a] && s[a] != c)
+		{
+			dst[b][d] = s[a];
+			d++;
+			a++;
+		}
+		dst[b][d] = '\0';
+		b++;
+	}
+	dst[b] = '\0';
+	return (dst);
 }
 
 char	**ft_split(char const *s, char c)
