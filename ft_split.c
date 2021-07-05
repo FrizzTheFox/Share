@@ -44,12 +44,12 @@ static int	ft_word_lenght(char const *s, char c, int i)
 	return (wlen);
 }
 
-static void	**ft_free(char **str, int i)
+static char	**ft_free(char **str, int i)
 {
 	while (str[i] && i > 0)
 	{
-		free(str[i]);
 		i--;
+		free(str[i]);
 	}
 	free(str);
 	return (NULL);
@@ -70,7 +70,7 @@ static char	**treat(char const *s, char **dst, char c, int slen)
 			a++;
 		dst[b] = (char *)malloc(sizeof(char) * (ft_word_lenght(s, c, a) + 1));
 		if (dst[b] == NULL)
-			return ((char **)ft_free(dst, b));
+			return (ft_free(dst, b));
 		while (s[a] && s[a] != c)
 		{
 			dst[b][d] = s[a];
@@ -95,6 +95,5 @@ char	**ft_split(char const *s, char c)
 	str = malloc(sizeof(char *) * (slen + 1));
 	if (str == NULL)
 		return (NULL);
-	str[slen + 1] = NULL;
-	return (str);
+	return (treat(s, str, c, slen));
 }
