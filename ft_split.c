@@ -11,21 +11,28 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_word_count(char const *s, char c)
 {
-	int wcount;
+	int	wcount;
+	int	check;
 
 	wcount = 0;
+	check = 1;
 	if (s == NULL || *s == '\0')
 		return (0);
 	while (*s)
 	{
-		if (*s && *(s + 1) != c)
+		if (*s == c)
+			check = 1;
+		else if (check == 1)
+		{
 			wcount++;
+			check = 0;
+		}
 		s++;
 	}
-	wcount++;
 	return (wcount);
 }
 
@@ -86,8 +93,8 @@ static char	**treat(char const *s, char **dst, char c, int slen)
 
 char	**ft_split(char const *s, char c)
 {
-	int	slen;
-	char **str;
+	int		slen;
+	char	**str;
 
 	slen = ft_word_count(s, c);
 	if (!s)
