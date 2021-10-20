@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jahmimid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/20 09:58:51 by jahmimid          #+#    #+#             */
+/*   Updated: 2021/10/20 09:59:36 by jahmimid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <unistd.h>
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    int len;
+	int	len;
 
-    len = write(1, &c, 1);
-    return(len);
+	len = write(1, &c, 1);
+	return (len);
 }
